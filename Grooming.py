@@ -91,6 +91,17 @@ world_data2 = load_data("data/동아시아.xlsx")
 world_data2.year=world_data2.year.astype(str)
 st.line_chart(world_data2, x='year', y=['일본', '중국'], height=500)
 
+st.subheader("국가별 남성 화장품 시장 규모")
+col3, col4 = st.columns(2)
+with col3:
+    world_data1 = load_data("data/아메리카.xlsx")
+    world_data1.year=world_data1.year.astype(str)
+    st.line_chart(world_data1, x='year', y=['브라질', '미국'], height=500)
+with col4:
+    world_data2 = load_data("data/동아시아.xlsx")
+    world_data2.year=world_data2.year.astype(str)
+    st.line_chart(world_data2, x='year', y=['일본', '중국'], height=500)
+
 st.subheader("트위터 언급량 추이")
 tweet_data = load_data("data/tweet.xlsx")
 tweet_data.date=tweet_data.date.astype(str)
