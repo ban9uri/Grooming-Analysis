@@ -42,6 +42,16 @@ st.info("""
 **3. 결(結)**
  - 결론 및 시사점
 """, icon="ℹ️")
+st.markdown("***")
+
+st.header("기(起)")
+st.markdown(
+"""
+#### ▶ 용어 정의
+
+
+"""
+)
 
 st.subheader('그루밍족 감성분석')
 labels1 = ['POSITIVE', 'NEGATIVE']
@@ -78,7 +88,7 @@ st.altair_chart(pie2, use_container_width=True)
 
 st.subheader("남성 외모 관리 방법")
 how_data = load_data("data/남성 외모 관리 방법 (가로 막대그래프).xlsx")
-how_chart = alt.Chart(how_data).mark_bar().encode(
+how_chart = alt.Chart(how_data).mark_bar(color = 'greenpale').encode(
     x='Rate',
     y='Type'
     ).properties(height=400)
