@@ -88,7 +88,7 @@ st.altair_chart(pie2, use_container_width=True)
 
 st.subheader("남성 외모 관리 방법")
 how_data = load_data("data/남성 외모 관리 방법 (가로 막대그래프).xlsx")
-how_chart = alt.Chart(how_data).mark_bar(color = 'greenpale').encode(
+how_chart = alt.Chart(how_data).mark_bar(color = 'palegreen').encode(
     x='Rate',
     y='Type'
     ).properties(height=400)
