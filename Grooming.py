@@ -91,7 +91,7 @@ st.markdown(
 """
 ##### ▶ 그루밍족 등장의 미시적 원인
 
-1. 외모지상주의 
+###### 1. 외모지상주의 
 지난 수십 년간 한국 사회에 뿌리 내린 외모지상주의가 그루밍족 등장의 원인 중 하나로 지목될 
 수 있다. 이하는 한국의 외모지상주의를 보여줄 수 있는 통계자료이다. 인구 천 명당 연간 성형수술 
 건수는 한국이 23건으로, 조사 대상이 된 다른 국가들과 비교하여 유의미하게 높은 수치를 보인다.
@@ -105,7 +105,7 @@ st.caption("**<그래프 2>** *출처: ISAPS / 단위: 건*")
 
 st.markdown(
 """
-2. 아이돌과 대중매체의 영향
+###### 2. 아이돌과 대중매체의 영향
 방탄소년단(BTS)로 대표되는 한국의 K-POP 산업은 전세계적으로 큰 성공을 거두고 있다. 이러한 
 K-POP의 초기 해외 시장 진출 과정에서 진입 장벽으로 작용한 것은 바로 남성 가수 또한 여성 가
 수 못지않은 수준의 메이크업을 한다는 점이었다. 하지만 메이크업을 하는 남성 가수들의 모습을 대
@@ -219,16 +219,29 @@ if st.button('참고'):
 else:
     st.write('전세계적인 남성 그루밍 시장 상황을 보고 싶다면 버튼을 클릭하시오.')
 
+st.markdown(
+"""
+##### ▶ 남성 그루밍 관련 소셜 미디어 성장세
+설명
 
-st.subheader("트위터 언급량 추이")
-tweet_data = load_data("data/tweet.xlsx")
-tweet_data.date=tweet_data.date.astype(str)
-st.line_chart(tweet_data, x='date', y='tweet', height=500)
-
-st.subheader("유튜브 구독자 수 추이")
+###### *그루밍 관련 유튜브 채널 구독자 수 추이*
+"""
+)
 youtube_data = load_data("data/youtuber.xlsx")
 youtube_data.date=youtube_data.date.astype(str)
 st.line_chart(youtube_data, x='date', y=['화장', '헤어', '패션', '헬스'], height=500)
+st.caption("**<그래프 10>** *출처: ㅇ / 단위: 명*")
+
+st.markdown("""
+    ###### *그루밍 관련 키워드 트위터 언급량 추이*
+    설명
+    """)
+tweet_data = load_data("data/tweet.xlsx")
+tweet_data.date=tweet_data.date.astype(str)
+st.line_chart(tweet_data, x='date', y='tweet', height=500)
+st.caption("**<그래프 11>** *출처: Twitter / 단위: 명*")
+
+
 
 
 st.subheader("유튜브 내 긍정/부정 인식")
