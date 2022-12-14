@@ -183,6 +183,16 @@ exp_chart = alt.Chart(exp_data).mark_bar().encode(
     ).properties(height=500)
 st.altair_chart(exp_chart, use_container_width=True)
 st.caption("**<그래프 6>** *출처: <2022 남성 그루밍 트렌드 리포트>, 오픈서베이 / 단위: %*")
+st.markdown("***")
+
+st.header("서(序)")
+st.markdown(
+"""
+##### ▶ 남성 그루밍 시장 성장세
+국내 남성 화장품 시장은 매년 10% 이상의 성장률을 기록하며 꾸준히 성장 중이다. 2020년 기준 이미 1조 4천억 이상의
+규모를 달성하였고, 이러한 성장세는 앞으로도 지속될 것으로 전망된다.
+"""
+)
 
 
 st.subheader("국내 남성 화장품 시장 규모")
