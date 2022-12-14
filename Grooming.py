@@ -284,31 +284,66 @@ st.markdown(
 col5, col6 = st.columns(2)
 with col5:
     image3 = Image.open('img/dc wordcloud.png')
-    st.image(image3, caption='DC WordCloud')
+    st.image(image3, caption='<그림 3> DC WordCloud')
     st.caption("*출처: 디시인사이드 '남자 관리' 키워드 검색 결과(정확도순), n=1000*")
 with col6:
     image4 = Image.open('img/twitter wordcloud.png')
-    st.image(image4, caption='Twitter WordCloud')
+    st.image(image4, caption='<그림 4>Twitter WordCloud')
     st.caption("*출처: 트위터 '남자(화장OR외모 관리OR자기 관리)' 검색 결과, n=2000*")
+st.markdown(
+"""
+디시인사이드와 트위터 모두 공통적으로 ‘좋다’, ‘좋아하다’, ‘잘생기다’, ‘많다’, ‘중요하다’, ‘필요하다’, ‘예쁘다’ 등의 긍정적 성격의 형용사가 
+‘싫다’, ‘싫어하다’ 등의 부정적 성격의 형용사에 비해 더 많은 종류가 더 높은 빈도로 추출되었음을 확인할 수 있다.
+"""
+)
+st.markdown(
+"""
+디시인사이드의 경우. 특징적으로  ‘적당하다’, ‘깔끔하다’ 등의 키워드가 도출된 것을 통해 남성들은 과하지 않은 자연스러운 그루밍 행위를 추구함을
+엿볼 수 있다. ‘철저하다’, ‘꾸준하다’, ‘당연하다’ 등의 키워드를 통해서는 남성의 외모 관리가 과거에 비해 보편화된 현상임을 엿볼 수 있다. 크롤링
+결과를 분석하는 과정에서 그루밍 행위에 대한 회의론도 적지 않게 발견되었는데, 이러한 여론은 ‘똑같다’, ‘필요없다’, ‘어렵다’, ‘힘들다’, ‘이상하다’,
+(여성들이)‘싫어하다’ 등의 키워드를 통해 확인되었다.
+"""
+)
+st.markdown(
+"""
+트위터의 경우,
+"""
+)
+
+st.markdown(
+"""
+##### ▶ 남성 그루밍 제품 마케팅 방식 분석: 쿠팡을 중심으로
+앞선 분석에서, 남성들은 그루밍 행위에 있어서 간편함, 자연스러움 등의 가치를 추구함을 보였다. 이를 바탕으로, 남성들이 중시하는 이러한 가치들이
+실제로 남성 화장품의 마케팅에도 반영이 되는지를 보고자 한다. 이를 위해 국내 쇼핑 사이트인 ‘쿠팡(Coupang)’을 분석 대상으로 선정하였다.  이하는
+쿠팡 ‘남성화장품’ 카테고리에서 ‘남성 스킨케어’ 제품과 ‘남성 메이크업’ 제품을 분석한 내용이다.
+"""
+)
+st.caption("""
+2021년 10월 기준 연령별 쇼핑 어플리케이션 설치 순위 통계에서 10대부터 60대까지 전부 1위를 차지(출처: Dighty)하고 그루밍족이 주로 
+분포하는 MZ세대가 가장 선호하는 종합 온라인 쇼핑몰 1위를 차지(출처: 대학내일20대연구소)했다는 점을 고려하였다.
+""")
+st.markdown("스킨케어/메이크업 상품 기업의 마케팅 방식")
+col7, col8 = st.columns(2)
+with col7:
+    image5 = Image.open('img/skincare wordcloud.png')
+    st.image(image5, caption='<그림 5> Skincare Marketing WordCloud')
+    st.caption("*출처: 쿠팡 / 대상: 남성 스킨케어 제품 판매량 상위 120개 제품의 상품명*")
+with col8:
+    image6 = Image.open('img/makeup wordcloud.png')
+    st.image(image6, caption='<그림 6> Makeup Marketing WordCloud')
+    st.caption("*출처: 쿠팡 / 대상: 남성 메이크업 제품 판매량 상위 15개 제품의 제품 설명 문구*")
 
 
-st.subheader("트위터 내 인식(여성의 인식)")
-
-st.subheader("스킨케어 상품 기업의 마케팅 방식")
-image5 = Image.open('img/skincare wordcloud.png')
-st.image(image5, caption='Skincare Marketing WordCloud')
-
-st.subheader("메이크업 상품 기업의 마케팅 방식")
-image6 = Image.open('img/makeup wordcloud.png')
-st.image(image6, caption='Makeup Marketing WordCloud')
-
-st.subheader("소비자 선호 상품")
-image7 = Image.open('img/cosmetic_star45.png')
-st.image(image7, caption='Cosmetic 4-5 Review WordCloud')
-
-st.subheader("소비자 불호 상품")
-image8 = Image.open('img/cosmetic_star12.png')
-st.image(image8, caption='Cosmetic 1-2 Review WordCloud')
+st.markdown("긍정적/부정적 상품평 분석")
+col9, col10 = st.columns(2)
+with col9:
+    image7 = Image.open('img/cosmetic_star45.png')
+    st.image(image7, caption='Cosmetic 4-5 Review WordCloud')
+    st.caption("*출처: 쿠팡 / 대상: *")
+with col10:
+    image8 = Image.open('img/cosmetic_star12.png')
+    st.image(image8, caption='Cosmetic 1-2 Review WordCloud')
+    st.caption("*출처: 쿠팡 / 대상: *")
 
 
 st.subheader("여성경제활동인구 및 참가율")
