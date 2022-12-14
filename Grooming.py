@@ -169,7 +169,7 @@ st.caption("**<그래프 5>** *출처: 통계청 / 단위: %*")
 st.subheader('')
 st.markdown(
 """
-구체적으로 사용하는 외모관리 제품의 종류와 비율은 다음과 같다. 생필품의 성격을 가진 폼클렌저, 로션,
+남성들이 사용하는 외모관리 제품의 구체적 종류와 비율은 다음과 같다. 생필품의 성격을 가진 폼클렌저, 로션,
 스킨 등을 제외하면 기초 화장품 부문에서는 올인원 제품, 자외선차단 제품, 에센스, 마스크팩이 50% 이상을
 차지하였다. 색조화장품 부문에서 가장 높은 비율을 기록한 것은 23.2%의 BB크림/CC크림이었다. 또한, 1인당
 평균 사용하는 남성 그루밍 제품 개수가 7.7개였다.
@@ -200,7 +200,7 @@ kor_data = load_data("data/국내 남성 화장품 시장 규모 (선그래프).
 kor_data.year=kor_data.year.astype(str)
 st.line_chart(kor_data, x='year', y='amount', height=500)
 st.caption("**<그래프 7>** *출처: Euromonitor / 단위: 억 원*")
-if st.button('참고'):
+if st.button('해외 시장 동향 확인하기'):
     st.markdown("""
     ###### *해외 남성 그루밍 시장 성장세*
     이하는 전세계 남성 그루밍 시장 규모 1, 2위를 차지하고 있는 미국과 브라질과, 인근 동아시아 국가인 일본과 중국의 시장 규모 변화를 보인 그래프이다.
@@ -216,8 +216,6 @@ if st.button('참고'):
         world_data2.year=world_data2.year.astype(str)
         st.line_chart(world_data2, x='year', y=['일본', '중국'], height=500)
         st.caption("**<그래프 9>** *출처: Euromonitor / 단위: 백만 달러*")
-else:
-    st.write('전세계적인 남성 그루밍 시장 상황을 보고 싶다면 버튼을 클릭하시오.')
 st.subheader('')
 st.markdown(
 """
