@@ -205,13 +205,13 @@ if st.button('참고'):
     ###### *해외 남성 그루밍 시장 성장세*
     이하는 전세계 남성 그루밍 시장 규모 1, 2위를 차지하고 있는 미국과 브라질과, 인근 동아시아 국가인 일본과 중국의 시장 규모 변화를 보인 그래프이다.
     """)
-    col3, col4 = st.columns(2)
-    with col3:
+    col1, col2 = st.columns(2)
+    with col1:
         world_data1 = load_data("data/아메리카.xlsx")
         world_data1.year=world_data1.year.astype(str)
         st.line_chart(world_data1, x='year', y=['브라질', '미국'], height=500)
         st.caption("**<그래프 8>** *출처: Euromonitor / 단위: 백만 달러*")
-    with col4:
+    with col2:
         world_data2 = load_data("data/동아시아.xlsx")
         world_data2.year=world_data2.year.astype(str)
         st.line_chart(world_data2, x='year', y=['일본', '중국'], height=500)
@@ -249,12 +249,12 @@ st.markdown(
 ###### *유튜브 내 긍정/부정 인식*
 """
 )
-col1, col2 = st.columns(2)
-with col1:
+col3, col4 = st.columns(2)
+with col3:
     image1 = Image.open('img/youtube_positive_wordcloud.png')
     st.image(image1, caption='<그림 1> Youtube Positive WordCloud')
     st.caption("*출처: 영상제목 / n=*")
-with col2:
+with col4:
     image2 = Image.open('img/youtube_negative_wordcloud.png')
     st.image(image2, caption='<그림 2> Youtube Negative WordCloud')
     st.caption("*출처: 영상제목 / n=*")
@@ -275,16 +275,24 @@ st.caption("""
 TOP 7에 선정된바 역시 사회적 인식을 충분히 반영할 수 있다고 판단하였다. 트위터를 여초 커뮤니티로 규정한 근거는 ‘트위터’ 어플리케이션 유저 
 중 여성 비율이 63.8%라는 통계자료에 기반한 것이다. 
 """)
+st.markdown(
+"""
+이하는 남성 그루밍 행위 관련 키워드의 게시글 내용을 크롤링한 결과에서 형용사를 추출하여 워드클라우드 형태로 제작한 것이다.
+###### *디시인사이드/트위터 내 인식*
+"""
+)
+col5, col6 = st.columns(2)
+with col5:
+    image3 = Image.open('img/dc wordcloud.png')
+    st.image(image3, caption='DC WordCloud')
+    st.caption("*출처: 디시인사이드 '남자 관리' 키워드 검색 결과(정확도순), n=1000*")
+with col6:
+    image4 = Image.open('img/twitter wordcloud.png')
+    st.image(image4, caption='Twitter WordCloud')
+    st.caption("*출처: 트위터 '남자(화장OR외모 관리OR자기 관리)' 검색 결과, n=2000*")
 
-
-
-st.subheader("DC 내 인식(남성의 인식)")
-image3 = Image.open('img/dc wordcloud.png')
-st.image(image3, caption='DC WordCloud')
 
 st.subheader("트위터 내 인식(여성의 인식)")
-image4 = Image.open('img/twitter wordcloud.png')
-st.image(image4, caption='Twitter WordCloud')
 
 st.subheader("스킨케어 상품 기업의 마케팅 방식")
 image5 = Image.open('img/skincare wordcloud.png')
