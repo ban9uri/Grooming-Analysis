@@ -252,12 +252,12 @@ st.markdown(
 col1, col2 = st.columns(2)
 with col1:
     image1 = Image.open('img/youtube_positive_wordcloud.png')
-    st.image(image1, caption='Youtube Positive WordCloud')
-    st.caption("**<그림 1>** *출처: 영상제목 / n=*")
+    st.image(image1, caption='**<그림 1> Youtube Positive WordCloud**')
+    st.caption("*출처: 영상제목 / n=*")
 with col2:
     image2 = Image.open('img/youtube_negative_wordcloud.png')
-    st.image(image2, caption='Youtube Negative WordCloud')
-    st.caption("**<그림 2>** *출처: 영상제목 / n=*")
+    st.image(image2, caption='**<그림 2> Youtube Negative WordCloud**')
+    st.caption("*출처: 영상제목 / n=*")
 
 st.markdown(
 """
