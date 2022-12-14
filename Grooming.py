@@ -13,7 +13,18 @@ def load_data(filename):
 
 st.title('💁🏻‍♂꾸미는 남자들:')
 st.header('그루밍족 톺아보기💄💇🏻‍♂💅🏻💪🏻👔💆🏻‍♂')
+st.markdown("***")
 st.write("데이터 저널리즘 11조: 김가연, 안민규, 장진")
+st.markdown("***")
+
+st.subheader('서문')
+st.write(
+"""
+    오늘날 그루밍족은 통계적으로 2030 남성들의 40% 이상을 차지한다. 국내 남성 그루밍 시장은 어
+떻게 진화해왔으며, 남성들의 그루밍에 대한 사회적 인식은 어떠한가? 또 기업들은 어떠한 마케팅 
+전략을 활용하여 그루밍족들을 소구하고 있는가?
+"""
+)
 
 st.info('This is a purely informational message', icon="ℹ️")
 
@@ -80,16 +91,6 @@ st.subheader("국내 남성 화장품 시장 규모")
 kor_data = load_data("data/국내 남성 화장품 시장 규모 (선그래프).xlsx")
 kor_data.year=kor_data.year.astype(str)
 st.line_chart(kor_data, x='year', y='amount', height=500)
-
-st.subheader("국가별 남성 화장품 시장 규모 - 아메리카")
-world_data1 = load_data("data/아메리카.xlsx")
-world_data1.year=world_data1.year.astype(str)
-st.line_chart(world_data1, x='year', y=['브라질', '미국'], height=500)
-
-st.subheader("국가별 남성 화장품 시장 규모 - 동아시아")
-world_data2 = load_data("data/동아시아.xlsx")
-world_data2.year=world_data2.year.astype(str)
-st.line_chart(world_data2, x='year', y=['일본', '중국'], height=500)
 
 st.subheader("국가별 남성 화장품 시장 규모")
 col3, col4 = st.columns(2)
