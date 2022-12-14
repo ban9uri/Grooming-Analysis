@@ -160,7 +160,7 @@ st.markdown(
 """
 )
 factor_data = load_data("data/남성 외모 관리 요인 (가로 막대그래프).xlsx")
-factor_chart = alt.Chart(factor_data).mark_bar().encode(
+factor_chart = alt.Chart(factor_data).mark_bar(color = 'khaki').encode(
     x='Rate',
     y='Factor'
     ).properties(height=300)
@@ -177,7 +177,7 @@ st.markdown(
 """
 )
 exp_data = load_data("data/제품 사용 경험 (가로 막대그래프).xlsx")
-exp_chart = alt.Chart(exp_data).mark_bar(color = 'khaki').encode(
+exp_chart = alt.Chart(exp_data).mark_bar().encode(
     x='percentage',
     y='item',
     color='Type'
