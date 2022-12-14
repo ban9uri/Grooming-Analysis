@@ -11,6 +11,8 @@ def load_data(filename):
     data = pd.read_excel(filename)
     return data
 
+st.title('꾸미는 남자들')
+st.header('그루밍족 톺아보기')
 st.subheader('그루밍족 감성분석')
 labels1 = ['POSITIVE', 'NEGATIVE']
 frequency1 = [17.8, 82.2]
