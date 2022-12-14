@@ -74,7 +74,7 @@ st.markdown(
 넷 커뮤니티상에서 그루밍족이라는 용어는 그 내용을 감성분석한 결과, 대체로 부정적인 용
 례로 사용됨을 확인할 수 있었다.
 
-###### *그루밍족 감성분석*
+###### *'그루밍족' 용례 감성분석 결과*
 """
 )
 source1 = pd.DataFrame({"Response": ['POSITIVE', 'NEGATIVE'], "value": [17.8, 82.2]})
@@ -83,6 +83,7 @@ pie1=alt.Chart(source1).mark_arc(innerRadius=50).encode(
     color=alt.Color(field="Response", type="nominal"),
 )
 st.altair_chart(pie1, use_container_width=True)
+st.caption("**<그래프 1>** *출처: 디시인사이드 갤러리 ‘그루밍족’ 키워드 검색, n=343*")
 
 st.subheader("인구 천 명당 연간 성형수술 건수")
 surgery_data = load_data("data/인구 천 명당 연간 성형수술 건수.xlsx")
