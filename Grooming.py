@@ -101,7 +101,7 @@ st.markdown(
 )
 surgery_data = load_data("data/인구 천 명당 연간 성형수술 건수.xlsx")
 st.bar_chart(surgery_data, x='국가', y='number', height=500)
-st.caption("**<그래프 2>** *출처: ISAPS*")
+st.caption("**<그래프 2>** *출처: ISAPS / 단위: 건*")
 
 st.markdown(
 """
@@ -116,41 +116,65 @@ K-POP의 초기 해외 시장 진출 과정에서 진입 장벽으로 작용한 
 """
 )
 
-st.subheader('남성 최근 1년 내 외모 관리 경험')
-labels2 = ['YES', 'NO']
-frequency2 = [92.6,7.4]
-explode2 = [0.2, 0.2]
-colors2 = ['#ff9999', '#ffc000']
-fig2, ax2 = plt.subplots()
-ax2.pie(frequency2, explode=explode2, labels=labels2, autopct='%1.1f%%',
-        shadow=True, startangle=260, colors=colors2)
-ax2.axis('equal')
-st.pyplot(fig2)
 
+st.markdown(
+"""
+##### ▶ 그루밍족 관련 통계
+
+통계청의 조사에 따르면, 최근 1년 내 외모 관리를 경험해본 남성의 비율은 92.6%로 그렇지 않은 7.4%보다 
+12배 이상 높은 수치를 기록하였다.
+
+###### *남성 최근 1년 내 외모 관리 경험*
+"""
+)
 source2 = pd.DataFrame({"Response": ['YES', 'NO'], "value": [92.6, 7.4]})
 pie2=alt.Chart(source2).mark_arc(innerRadius=50).encode(
     theta=alt.Theta(field="value", type="quantitative"),
     color=alt.Color(field="Response", type="nominal"),
 )
 st.altair_chart(pie2, use_container_width=True)
+st.caption("**<그래프 3>** *출처: 통계청 / 단위: %*")
 
-st.subheader("남성 외모 관리 방법")
+st.markdown(
+"""
+구체적인 외모 관리의 방법은 아래 그래프와 같다. 에 따르면 기초화장품을 통해 피부 관리를 한다고 응답한 
+남성은 조사 대상의 79.8%였다. 39.6%를 차지한 눈썹 관리, 19.4%를 차지한 체모 관리, 18.9%를 차지한 손
+톱/발톱 관리, 7.6%를 차지한 성형수술/시술이 그 뒤를 이었다. 
+###### *남성 외모 관리 방법*
+"""
+)
 how_data = load_data("data/남성 외모 관리 방법 (가로 막대그래프).xlsx")
 how_chart = alt.Chart(how_data).mark_bar(color = 'palegreen').encode(
     x='Rate',
     y='Type'
     ).properties(height=400)
 st.altair_chart(how_chart, use_container_width=True)
+st.caption("**<그래프 4>** *출처: <2022 남성 그루밍 트렌드 리포트>, 오픈서베이 / 단위: %*")
 
-st.subheader("남성 외모 관리 요인")
+st.markdown(
+"""
+남성들이 외모를 관리하는 요인은 자신감 획득(78.8%), 자기만족(73.4%), 대인관계 유지(67.8)% 순으로 많
+은 응답을 기록하였다.
+###### *남성 외모 관리 요인*
+"""
+)
 factor_data = load_data("data/남성 외모 관리 요인 (가로 막대그래프).xlsx")
 factor_chart = alt.Chart(factor_data).mark_bar().encode(
     x='Rate',
     y='Factor'
     ).properties(height=300)
 st.altair_chart(factor_chart, use_container_width=True)
+st.caption("**<그래프 5>** *출처: 통계청 / 단위: %*")
 
-st.subheader("제품 사용 경험")
+st.markdown(
+"""
+구체적으로 사용하는 외모관리 제품의 종류와 비율은 다음과 같다. 생필품의 성격을 가진 폼클렌저, 로션, 스
+킨 등을 제외하면 기초 화장품 부문에서는 올인원 제품, 자외선차단 제품, 에센스, 마스크팩이 50% 이상을 차
+지하였다. 색조화장품 부문에서 가장 높은 비율을 기록한 것은 23.2%의 BB크림/CC크림이었다. 또한, 1인당 평
+균 사용하는 남성 그루밍 제품 개수가 7.7개였다.
+###### *제품 사용 경험*
+"""
+)
 exp_data = load_data("data/제품 사용 경험 (가로 막대그래프).xlsx")
 exp_chart = alt.Chart(exp_data).mark_bar().encode(
     x='percentage',
@@ -158,6 +182,7 @@ exp_chart = alt.Chart(exp_data).mark_bar().encode(
     color='Type'
     ).properties(height=500)
 st.altair_chart(exp_chart, use_container_width=True)
+st.caption("**<그래프 6>** *출처: <2022 남성 그루밍 트렌드 리포트>, 오픈서베이 / 단위: %*")
 
 
 st.subheader("국내 남성 화장품 시장 규모")
