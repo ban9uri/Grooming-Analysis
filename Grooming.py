@@ -177,7 +177,7 @@ st.markdown(
 """
 )
 exp_data = load_data("data/제품 사용 경험 (가로 막대그래프).xlsx")
-exp_chart = alt.Chart(exp_data).mark_bar().encode(
+exp_chart = alt.Chart(exp_data).mark_bar(color = 'khaki').encode(
     x='percentage',
     y='item',
     color='Type'
