@@ -86,6 +86,8 @@ pie1=alt.Chart(source1).mark_arc(innerRadius=50).encode(
 st.altair_chart(pie1, use_container_width=True)
 st.caption("**<그래프 1>** *출처: 디시인사이드 갤러리 ‘그루밍족’ 키워드 검색, n=343*")
 
+st.write('')
+
 st.markdown(
 """
 ##### ▶ 그루밍족 등장의 미시적 원인
