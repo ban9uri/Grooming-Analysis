@@ -372,6 +372,20 @@ st.markdown(
 앞서 <그래프 7>에서 본 한국 남성 화장품 시장 규모의 변화 추이 또한 2010년대 내내 지속적인 상승세를 보여주었다. 이 두
 그래프를 통해 본 11조는 여성의 사회·경제적 진출과 남성의 그루밍 행위 간의 상관관계가 존재할 가능성을 엿보았다.
 
+###### *여성경제활동인구 및 참가율*
+"""
+)
+
+col11, col12 = st.columns(2)
+with col11:
+    image9 = Image.open('img/female_participation.png')
+    st.image(image9)
+    st.caption("**<그래프 12>** *출처: 통계청 / 단위: 명*")
+with col12:
+    st.line_chart(kor_data, x='year', y='amount', height=500)
+    st.caption("**<그래프 7>** *출처: Euromonitor / 단위: 억 원*")
+
+st.markdown("""
 본 11조는 앞서 제시한 미시적 원인들 외에, 그루밍족 등장에 대한 거시적 원인으로서 성 역할(gender role)의 변화를 제시한다.
 성 역할이란 남성 및 여성의 특징으로서 적합하다고 여겨지는 가치 내지는 고정관념이 일상생활의 역할에 반영된 것(Shaffer:2005, Berk:2009)을 의미한다.
 수렵·채집 사회 이래로, 동서고금을 막론하고 남성에게는 생물학적 힘을 바탕으로 가정의 생계를 책임지는 역할이 부여되었다. 하지만 현대 사회에서 여성
@@ -380,17 +394,4 @@ st.markdown(
 수 있겠다. 한국 사회의 경우에는, 이러한 성 역할을 남녀에게 부여하였었던, 오랜 세월 동안 사회 저변에 뿌리내린 채 행동 양식에 영향을 미친 유교적 사상과
 문화가 최근 들어 2030세대를 중심축으로 변화하고 있음을 시사한다고 볼 수 있겠다. 오늘날 여성의 경제 활동 진출을 남성 그루밍족 증가의 거시적 원인으로
 본다면, 미래에도 남성 그루밍 시장은 꾸준히 성장하리라고 예측해볼 수 있겠다.
-
-###### *여성경제활동인구 및 참가율*
-"""
-)
-
-col11, col12 = st.columns(2)
-fem_data = load_data("data/C 여성경제활동인구 및 참가율 (통계청).xlsx")
-fem_data.year=fem_data.year.astype(str)
-with col11:
-    st.bar_chart(fem_data, x='year', y='people', height=500)
-    st.caption("**<그래프 12>** *출처: 통계청 / 단위: 명*")
-with col12:
-    st.line_chart(fem_data, x='year', y='rate', height=500)
-    st.caption("**<그래프 13>** *출처: 통계청 / 단위: %*")
+""")
