@@ -14,6 +14,9 @@ def load_data(filename):
 st.title('💁🏻‍♂꾸미는 남자들:')
 st.header('그루밍족 톺아보기💄💇🏻‍♂💅🏻💪🏻👔💆🏻‍♂')
 st.write("데이터 저널리즘 11조: 김가연, 안민규, 장진")
+
+st.info('This is a purely informational message', icon="ℹ️")
+
 st.subheader('그루밍족 감성분석')
 labels1 = ['POSITIVE', 'NEGATIVE']
 frequency1 = [17.8, 82.2]
@@ -98,13 +101,16 @@ youtube_data = load_data("data/youtuber.xlsx")
 youtube_data.date=youtube_data.date.astype(str)
 st.line_chart(youtube_data, x='date', y=['화장', '헤어', '패션', '헬스'], height=500)
 
-st.subheader("유튜브 내 긍정 인식")
-image1 = Image.open('img/youtube_positive_wordcloud.png')
-st.image(image1, caption='Youtube Positive WordCloud')
 
-st.subheader("유튜브 내 부정 인식")
-image2 = Image.open('img/youtube_negative_wordcloud.png')
-st.image(image2, caption='Youtube Negative WordCloud')
+st.subheader("유튜브 내 긍정/부정 인식")
+col1, col2 = st.columns(2)
+with col1:
+    image1 = Image.open('img/youtube_positive_wordcloud.png')
+    st.image(image1, caption='Youtube Positive WordCloud')
+with col2:
+    image2 = Image.open('img/youtube_negative_wordcloud.png')
+    st.image(image2, caption='Youtube Negative WordCloud')
+
 
 st.subheader("DC 내 인식(남성의 인식)")
 image3 = Image.open('img/dc wordcloud.png')
