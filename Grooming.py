@@ -233,25 +233,40 @@ st.line_chart(youtube_data, x='date', y=['화장', '헤어', '패션', '헬스']
 st.caption("**<그래프 10>** *출처: ㅇ / 단위: 명*")
 
 st.markdown("""
-    ###### *그루밍 관련 키워드 트위터 언급량 추이*
-    설명
-    """)
+###### *그루밍 관련 키워드 트위터 언급량 추이*
+설명
+""")
 tweet_data = load_data("data/tweet.xlsx")
 tweet_data.date=tweet_data.date.astype(str)
 st.line_chart(tweet_data, x='date', y='tweet', height=500)
 st.caption("**<그래프 11>** *출처: Twitter / 단위: 명*")
 
-
-
-
-st.subheader("유튜브 내 긍정/부정 인식")
+st.markdown(
+"""
+##### ▶ 남성 그루밍에 대한 사회적 인식: 소셜 미디어를 중심으로
+###### - 긍정/부정 인식 간 비교
+설명
+###### *유튜브 내 긍정/부정 인식*
+"""
+)
 col1, col2 = st.columns(2)
 with col1:
     image1 = Image.open('img/youtube_positive_wordcloud.png')
     st.image(image1, caption='Youtube Positive WordCloud')
+    st.caption("**<그림 1>** *출처: 영상제목 / n=*")
 with col2:
     image2 = Image.open('img/youtube_negative_wordcloud.png')
     st.image(image2, caption='Youtube Negative WordCloud')
+    st.caption("**<그림 2>** *출처: 영상제목 / n=*")
+
+st.markdown(
+"""
+###### - 남성/여성 인식 간 비교
+남성의 그루밍 행위에 대한 남성과 여성의 인식을 비교하고자, 남성 유저 위주의 커뮤니티 ‘디시인사이드’, 여성 유저 위주의 커뮤니티 ‘트위터’를 선정하였다.
+"""
+)
+
+
 
 
 st.subheader("DC 내 인식(남성의 인식)")
