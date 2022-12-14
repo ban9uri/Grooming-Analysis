@@ -78,7 +78,7 @@ st.markdown(
 """
 )
 source1 = pd.DataFrame({"Response": ['POSITIVE', 'NEGATIVE'], "value": [17.8, 82.2]})
-pie1=alt.Chart(source1).mark_arc(innerRadius=50, color=['red', 'green']).encode(
+pie1=alt.Chart(source1).mark_arc(innerRadius=50).encode(
     theta=alt.Theta(field="value", type="quantitative"),
     color=alt.Color(field="Response", type="nominal"),
 )
