@@ -191,25 +191,34 @@ st.markdown(
 ##### ▶ 남성 그루밍 시장 성장세
 국내 남성 화장품 시장은 매년 10% 이상의 성장률을 기록하며 꾸준히 성장 중이다. 2020년 기준 이미 1조 4천억 이상의
 규모를 달성하였고, 이러한 성장세는 앞으로도 지속될 것으로 전망된다.
+
+###### *국내 남성 화장품 시장 규모*
 """
 )
-
-
-st.subheader("국내 남성 화장품 시장 규모")
 kor_data = load_data("data/국내 남성 화장품 시장 규모 (선그래프).xlsx")
 kor_data.year=kor_data.year.astype(str)
 st.line_chart(kor_data, x='year', y='amount', height=500)
+st.caption("**<그래프 7>** *출처: Euromonitor / 단위: 억 원*")
 
-st.subheader("국가별 남성 화장품 시장 규모")
-col3, col4 = st.columns(2)
-with col3:
-    world_data1 = load_data("data/아메리카.xlsx")
-    world_data1.year=world_data1.year.astype(str)
-    st.line_chart(world_data1, x='year', y=['브라질', '미국'], height=500)
-with col4:
-    world_data2 = load_data("data/동아시아.xlsx")
-    world_data2.year=world_data2.year.astype(str)
-    st.line_chart(world_data2, x='year', y=['일본', '중국'], height=500)
+if st.button('참고'):
+    st.markdown("""
+    ###### *해외 남성 그루밍 시장 성장세*
+    이하는 전세계 남성 그루밍 시장 규모 1, 2위를 차지하고 있는 미국과 브라질과, 인근 동아시아 국가인 일본과 중국의 시장 규모 변화를 보인 그래프이다.
+    """)
+    col3, col4 = st.columns(2)
+    with col3:
+        world_data1 = load_data("data/아메리카.xlsx")
+        world_data1.year=world_data1.year.astype(str)
+        st.line_chart(world_data1, x='year', y=['브라질', '미국'], height=500)
+        st.caption("**<그래프 8>** *출처: Euromonitor / 단위: 백만 달러*")
+    with col4:
+        world_data2 = load_data("data/동아시아.xlsx")
+        world_data2.year=world_data2.year.astype(str)
+        st.line_chart(world_data2, x='year', y=['일본', '중국'], height=500)
+        st.caption("**<그래프 9>** *출처: Euromonitor / 단위: 백만 달러*")
+else:
+    st.write('전세계적인 남성 그루밍 시장 상황을 보고 싶다면 버튼을 클릭하시오.')
+
 
 st.subheader("트위터 언급량 추이")
 tweet_data = load_data("data/tweet.xlsx")
