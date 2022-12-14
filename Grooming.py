@@ -303,7 +303,7 @@ with col5:
     st.caption("*출처: 디시인사이드 '남자 관리' 키워드 검색 결과(정확도순), n=1000*")
 with col6:
     image4 = Image.open('img/twitter wordcloud.png')
-    st.image(image4, caption='<그림 4>Twitter WordCloud')
+    st.image(image4, caption='<그림 4> Twitter WordCloud')
     st.caption("*출처: 트위터 '남자(화장OR외모 관리OR자기 관리)' 검색 결과, n=2000*")
 st.markdown(
 """
