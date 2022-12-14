@@ -85,7 +85,7 @@ pie1=alt.Chart(source1).mark_arc(innerRadius=50).encode(
 )
 st.altair_chart(pie1, use_container_width=True)
 st.caption("**<그래프 1>** *출처: 디시인사이드 갤러리 ‘그루밍족’ 키워드 검색, n=343*")
-
+st.subheader('')
 st.markdown(
 """
 ##### ▶ 그루밍족 등장의 미시적 원인
@@ -101,7 +101,7 @@ st.markdown(
 surgery_data = load_data("data/인구 천 명당 연간 성형수술 건수.xlsx")
 st.bar_chart(surgery_data, x='국가', y='number', height=500)
 st.caption("**<그래프 2>** *출처: ISAPS / 단위: 건*")
-
+st.subheader('')
 st.markdown(
 """
 ###### 2. 아이돌과 대중매체의 영향
@@ -133,7 +133,7 @@ pie2=alt.Chart(source2).mark_arc(innerRadius=50).encode(
 )
 st.altair_chart(pie2, use_container_width=True)
 st.caption("**<그래프 3>** *출처: 통계청 / 단위: %*")
-
+st.subheader('')
 st.markdown(
 """
 구체적인 외모 관리의 방법은 아래 그래프와 같다. 에 따르면 기초화장품을 통해 피부 관리를 한다고 응답한
@@ -149,7 +149,7 @@ how_chart = alt.Chart(how_data).mark_bar(color = 'palegreen').encode(
     ).properties(height=400)
 st.altair_chart(how_chart, use_container_width=True)
 st.caption("**<그래프 4>** *출처: <2022 남성 그루밍 트렌드 리포트>, 오픈서베이 / 단위: %*")
-
+st.subheader('')
 st.markdown(
 """
 남성들이 외모를 관리하는 요인은 자신감 획득(78.8%), 자기만족(73.4%), 대인관계 유지(67.8)% 순으로
@@ -164,7 +164,7 @@ factor_chart = alt.Chart(factor_data).mark_bar().encode(
     ).properties(height=300)
 st.altair_chart(factor_chart, use_container_width=True)
 st.caption("**<그래프 5>** *출처: 통계청 / 단위: %*")
-
+st.subheader('')
 st.markdown(
 """
 구체적으로 사용하는 외모관리 제품의 종류와 비율은 다음과 같다. 생필품의 성격을 가진 폼클렌저, 로션,
@@ -198,7 +198,6 @@ kor_data = load_data("data/국내 남성 화장품 시장 규모 (선그래프).
 kor_data.year=kor_data.year.astype(str)
 st.line_chart(kor_data, x='year', y='amount', height=500)
 st.caption("**<그래프 7>** *출처: Euromonitor / 단위: 억 원*")
-
 if st.button('참고'):
     st.markdown("""
     ###### *해외 남성 그루밍 시장 성장세*
@@ -217,7 +216,7 @@ if st.button('참고'):
         st.caption("**<그래프 9>** *출처: Euromonitor / 단위: 백만 달러*")
 else:
     st.write('전세계적인 남성 그루밍 시장 상황을 보고 싶다면 버튼을 클릭하시오.')
-
+st.subheader('')
 st.markdown(
 """
 ##### ▶ 남성 그루밍 관련 소셜 미디어 성장세
@@ -235,7 +234,7 @@ youtube_data = load_data("data/youtuber.xlsx")
 youtube_data.date=youtube_data.date.astype(str)
 st.line_chart(youtube_data, x='date', y=['화장', '헤어', '패션', '헬스'], height=500)
 st.caption("**<그래프 10>** *출처: Social Blade, 관련 언론기사 / 단위: 명*")
-
+st.subheader('')
 st.markdown("""
 국내 주요 소셜 미디어 중 하나인 트위터에서 그루밍 관련 키워드(남자(화장OR외모 관리OR자기 관리))가
 매년 얼마나 언급되었는지 알기 위해서 데이터 크롤링을 진행하였다. 2009년 이전에는 트위터 내에서 키워드에
@@ -249,7 +248,7 @@ tweet_data = load_data("data/tweet.xlsx")
 tweet_data.date=tweet_data.date.astype(str)
 st.line_chart(tweet_data, x='date', y='tweet', height=500)
 st.caption("**<그래프 11>** *출처: Twitter / 단위: 명*")
-
+st.subheader('')
 st.markdown(
 """
 ##### ▶ 남성 그루밍에 대한 사회적 인식: 소셜 미디어를 중심으로
@@ -275,7 +274,7 @@ with col4:
     image2 = Image.open('img/youtube_negative_wordcloud.png')
     st.image(image2, caption='<그림 2> Youtube Negative WordCloud')
     st.caption("*출처: 영상제목 / n=150*")
-
+st.subheader('')
 st.markdown(
 """
 ###### - 남성/여성 인식 간 비교
@@ -326,7 +325,7 @@ st.markdown(
 트위터의 경우,
 """
 )
-
+st.subheader('')
 st.markdown(
 """
 ##### ▶ 남성 그루밍 제품 마케팅 방식 분석: 쿠팡을 중심으로
@@ -361,7 +360,7 @@ st.markdown("""
 등장한 ‘자연스럽다’, ‘가볍다’, ‘깔끔하다’, ‘얇다’ 등의 키워드를 통해, 앞서 확인한 남성들이 그루밍 행위에 있어서 중시하는 ‘자연스러움’이라는 가치가
 제품 마케팅에 활용된 것을 확인할 수 있었다. ‘촉촉하다’ 키워드를 통해서는 앞서 스킨케어에서 확인한 대로 보습력이 주요 마케팅 포인트임을 확인할 수 있었다. 
 """)
-
+st.subheader('')
 st.markdown("""
 마케팅 방식에 대한 분석에 이어서 남성 화장품을 구매하는 소비자들은 제품을 구매할 때 어떠한 부분을 중요시 여기는지를 알아보기 위해 쿠팡에서 판매하는 5종류의
 남성 화장품(아이브로우, 톤업크림, 쿠션, 립밤, 비비크림)의 상품평을 크롤링하여 긍정적인 리뷰와 부정적인 리뷰로 나누어서 분석을 진행하였다.
