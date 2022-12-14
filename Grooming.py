@@ -51,7 +51,6 @@ st.markdown(
 **그루밍족(Grooming-族):** 외모를 경쟁력이라 여기고 외모 관리에 시간과 비용을 아낌없이 투자하는 
 남성. 마부가 말을 목욕시키고 빗질하는 것을 뜻하는 그룸(groom)에서 유래한 단어이다.
 
-
 ##### ▶ 용어 등장 시기
 그루밍족이라는 단어가 처음 등장한 것은 2007년으로 추정된다.
 """
@@ -75,20 +74,15 @@ st.markdown(
 넷 커뮤니티상에서 그루밍족이라는 용어는 그 내용을 감성분석한 결과, 대체로 부정적인 용
 례로 사용됨을 확인할 수 있었다.
 
-###### 그루밍족 감성분석
+###### *그루밍족 감성분석*
 """
 )
-
-st.subheader('')
-labels1 = ['POSITIVE', 'NEGATIVE']
-frequency1 = [17.8, 82.2]
-explode1 = [0.2, 0.2]
-colors1 = ['#8fd9b6', '#d395d0']
-fig1, ax1 = plt.subplots()
-ax1.pie(frequency1, explode=explode1, labels=labels1, autopct='%1.1f%%',
-        shadow=True, startangle=260, colors=colors1)
-ax1.axis('equal')
-st.pyplot(fig1)
+source1 = pd.DataFrame({"Response": ['POSITIVE', 'NEGATIVE'], "value": [17.8, 82.2]})
+pie1=alt.Chart(source1).mark_arc(innerRadius=50, color=['#8fd9b6', '#d395d0']).encode(
+    theta=alt.Theta(field="value", type="quantitative"),
+    color=alt.Color(field="Response", type="nominal"),
+)
+st.altair_chart(pie1, use_container_width=True)
 
 st.subheader("인구 천 명당 연간 성형수술 건수")
 surgery_data = load_data("data/인구 천 명당 연간 성형수술 건수.xlsx")
