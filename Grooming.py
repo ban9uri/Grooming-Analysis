@@ -385,8 +385,8 @@ col11, col12 = st.columns(2)
 fem_data = load_data("data/C 여성경제활동인구 및 참가율 (통계청).xlsx")
 fem_data.year=fem_data.year.astype(str)
 with col11:
-    st.bar_chart(fem_data, x='year', y='여성경제 활동인구', height=500)
+    st.bar_chart(fem_data, x='year', y='people', height=500)
     st.caption("**<그래프 12>** *출처: 통계청 / 단위: 명*")
 with col12:
-    st.line_chart(fem_data, x='year', y='여성경제 활동참가율', height=500)
+    st.line_chart(fem_data, x='year', y='rate', height=500)
     st.caption("**<그래프 13>** *출처: 통계청 / 단위: %*")
